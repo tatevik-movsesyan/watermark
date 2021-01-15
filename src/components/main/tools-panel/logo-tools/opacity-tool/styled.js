@@ -9,6 +9,8 @@ export const OpacityWrapper = styled.div`
   padding: 5% 0 8%;
   @media only screen and (max-width: 768px) {
   border-bottom: none;
+  padding: 17px 0 24px;
+ 
   }
   `;
 

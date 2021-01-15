@@ -10,16 +10,7 @@ import ElementLogo from "../../element-logo/index";
 import { getCurrentComponent } from "../../../../../helperFunctions";
 import {useDivSize} from "../../../../../useDivSize";
 
-const components = [
-  {
-    component: <ElementLogo />,
-    key: "img",
-  },
-  {
-    component: <ElementText />,
-    key: "text",
-  },
-];
+
 
 const ScreenTiled = (props) => {
   const { data, imgCropParams } = props;
@@ -27,16 +18,27 @@ const ScreenTiled = (props) => {
 
   const divSize = useDivSize(elementRef);
 
-  console.log(divSize);
+  const components = [
+    {
+      component: <ElementLogo />,
+      key: "img",
+    },
+    {
+      component: <ElementText />,
+      key: "text",
+    },
+  ];
 
-  const count = Math.ceil(
-    divSize.width * divSize.height /
-      (parseFloat(imgCropParams.width) * parseFloat(imgCropParams.height))
+  
+
+  const getObjCount=()=> 
+    Math.floor(divSize.width /(parseFloat(imgCropParams.width)) * Math.ceil(divSize.height /
+     parseFloat(imgCropParams.height))
   );
 
   return (
     <Styled.ScreenTiledWrapper ref={elementRef}>
-      {[...Array(count)].map((el, ind) => (
+      {[...Array(getObjCount())].map((el, ind) => (
         <Styled.ElementTiledWrapper paddingValue={data.padding} key={ind}>
           <>{getCurrentComponent(data.type, components)}</>
         </Styled.ElementTiledWrapper>

@@ -89,6 +89,7 @@ export const TiledModeWrapper = styled.div`
   padding: 7% 0 8%;
   padding: ${(props) => changeSwitchModDivHeight(props.type)};
   @media only screen and (max-width: 768px) {
+    padding: 16px 0px 17px;
     border-bottom: none;
     }
 `;

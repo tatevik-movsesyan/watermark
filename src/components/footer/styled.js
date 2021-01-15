@@ -9,6 +9,7 @@ align-items: center;
 border-top: 1px solid #DEE3F0;
 padding:36px 0px;
 
+
 @media only screen and (max-width: 768px) {
     height:12%;
     padding:0px;

@@ -12,6 +12,10 @@ justify-content:center;
 flex-direction: column;
 align-items:center;
 width: 100%;
+@media only screen and (max-width: 768px) {
+    padding: 26.5px 0px;
+}
+
 
 `
 export const PaddingTitle = styled.div`

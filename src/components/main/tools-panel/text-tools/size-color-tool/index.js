@@ -2,10 +2,13 @@ import React from "react";
 import * as Styled from "./styled";
 import { connect } from "react-redux";
 import { getData } from "../../../../../redux/selectors/index";
-import { setFontSizeValue, setColorValue } from "../../../../../redux/actions/index";
+import {
+  setFontSizeValue,
+  setColorValue,
+} from "../../../../../redux/actions/index";
 
- const SizeColorTool=(props)=> {
-  const {data,setFontSizeValue, setColorValue}=props;
+const SizeColorTool = (props) => {
+  const { data, setFontSizeValue, setColorValue } = props;
 
   const changeSize = (e) => setFontSizeValue(Number(e));
   const changeColor = (e) => setColorValue(e);
@@ -13,7 +16,6 @@ import { setFontSizeValue, setColorValue } from "../../../../../redux/actions/in
   return (
     <Styled.SizeColorWrapper>
       <Styled.SizeLabel>Size</Styled.SizeLabel>
-
       <Styled.SizeSlider
         type="range"
         value={data.fontSize}
@@ -33,12 +35,13 @@ import { setFontSizeValue, setColorValue } from "../../../../../redux/actions/in
   );
 };
 
-const mapStateToProps=(state)=>({
-  data:getData(state)
+const mapStateToProps = (state) => ({
+  data: getData(state),
 });
 
 const mapDispatchToProps = {
-  setFontSizeValue, setColorValue 
+  setFontSizeValue,
+  setColorValue,
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(SizeColorTool);
+export default connect(mapStateToProps, mapDispatchToProps)(SizeColorTool);

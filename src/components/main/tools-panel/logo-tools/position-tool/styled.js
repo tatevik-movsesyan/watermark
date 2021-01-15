@@ -7,6 +7,10 @@ export const PanelPositionWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    padding: 5.5px 0px;
+  }
+
  
 `;
 export const PositionTitle = styled.div`

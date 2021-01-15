@@ -11,13 +11,13 @@ import {useWindowSize} from "../../useWindowSize"
 const Main=(props)=> {
   const { data} = props;
 
-    const windowSize = useWindowSize();
+    const width = useWindowSize();
 
       return ( 
       <Styled.MainWrapper  type={data.type}>
           <ToolsPanel/>
-          { (windowSize.width > 768) && <ScreenPanel/> }
-          {data.type !== ""&& (windowSize.width <= 768) && <ScreenPanel/> }
+          { (width > 768) && <ScreenPanel/> }
+          {data.type !== ""&& (width <= 768) && <ScreenPanel/> }
       </Styled.MainWrapper>
     );
   }

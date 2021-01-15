@@ -4,14 +4,26 @@ import { getData } from "../../../../redux/selectors/index";
 import { connect } from "react-redux";
 import ScreenTiled from "./screen-tiled/index";
 import ScreenSingle from "./screen-single/index";
+import { getCurrentComponent } from "../../../../helperFunctions";
 
-const Screen = (props) => {
+const Screen = (props) => { 
   const { data } = props;
+
+  const COMPONENTS = [
+    {
+      component: <ScreenSingle />,
+      key: "single",
+    },
+
+    {
+      component: <ScreenTiled />,
+      key: "tiled",
+    },
+  ];
 
   return (
     <Styled.ScreenWrapper>
-      {data.mode === "single" && <ScreenSingle />}
-      {data.mode === "tiled" && <ScreenTiled />}
+      {getCurrentComponent(data.mode, COMPONENTS)}
     </Styled.ScreenWrapper>
   );
 };

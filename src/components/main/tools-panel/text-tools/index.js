@@ -8,10 +8,22 @@ import PaddingTool from "../logo-tools/padding-tool/index";
 import Text from "./text-tool/index";
 import SizeColorTool from "./size-color-tool/index";
 import FontTool from "./font-tool/index";
+import { getCurrentComponent } from "../../../../helperFunctions";
 
- const TextTools=(props)=> {
+const TextTools = (props) => {
   const { data } = props;
 
+  const COMPONENTS = [
+    {
+      component: <PositionTool />,
+      key: "single",
+    },
+
+    {
+      component: <PaddingTool />,
+      key: "tiled",
+    },
+  ];
 
   return (
     <Styled.TextEditorlWrapper>
@@ -19,8 +31,7 @@ import FontTool from "./font-tool/index";
       <SizeColorTool />
       <FontTool />
       <ModeTool />
-      {data.mode === "single" && <PositionTool />}
-      {data.mode === "tiled" && <PaddingTool />}
+      {getCurrentComponent(data.mode, COMPONENTS)}
     </Styled.TextEditorlWrapper>
   );
 };

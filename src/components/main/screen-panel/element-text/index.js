@@ -18,6 +18,7 @@ const ElementText = (props) => {
     [data.fontSize] 
   )
 
+
   return (
     <Styled.TextSingle
       fontSizeValue={data.fontSize}

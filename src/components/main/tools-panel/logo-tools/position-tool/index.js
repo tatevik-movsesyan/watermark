@@ -3,7 +3,6 @@ import * as Styled from "./styled";
 import { SetTopEdgeValue, SetLeftEdgeValue } from "../../../../../redux/actions/index";
 import { connect } from "react-redux";
 import { getData } from "../../../../../redux/selectors";
-import {increase} from "../../../../../constants";
 
 
 const PositionTool=(props)=> {
@@ -11,8 +10,8 @@ const PositionTool=(props)=> {
 
   const {data,SetTopEdgeValue,SetLeftEdgeValue}=props;
 
-  const canvasW=parseFloat(data.canvasWidth)-increase;
-  const canvasH=parseFloat(data.canvasHeight)-increase;
+  const canvasW=parseFloat(data.canvasWidth);
+  const canvasH=parseFloat(data.canvasHeight);
   
   const imgW = parseFloat(data.imageCropParams.width);
   const imgH = parseFloat(data.imageCropParams.height);
